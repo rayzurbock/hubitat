@@ -1,5 +1,5 @@
 /**
- *  Pushbullet Connect - updated 5/31/2018 1.0HE
+ *  Pushbullet Connect - updated 5/31/2018 1.1HE
  *  APP CODE
  *
  *  Copyright 2015 Eric Roberts
@@ -27,7 +27,7 @@ definition(
 
 
 preferences {
-    state.version = "1.0HE"
+    state.version = "1.1HE"
     page name: "enterAPI"
     page name: "selectDevice"
 }
@@ -110,7 +110,7 @@ def initialize() {
     //apiKey: settings.apiKey, iden: settings.pushbulletDevice
     log.debug("init settings.pushbulletDevice: ${settings.pushbulletDevice}, state.devices: ${state.devices}, state.devices[settings.pushbulletDevice]: ${state.devices[settings.pushbulletDevice]}")
     if (!state.stIden) {
-        def d = addChildDevice("baldeagle072", "Pushbullet", settings.pushbulletDevice, null, [name: "pushbullet.${state.devices[settings.pushbulletDevice]}", label: state.devices[settings.pushbulletDevice], completedSetup: true])
+        def d = addChildDevice("baldeagle072", "Pushbullet", settings.pushbulletDevice, null, [name: "pushbullet.${state.devices[settings.pushbulletDevice]}", label: "PB-${state.devices[settings.pushbulletDevice]}", completedSetup: true])
         state.stIden = settings.pushbulletDevice
     }
     state.apiKey = settings.apiKey
