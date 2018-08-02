@@ -1,5 +1,3 @@
-//#1.65   Mar 25, 2016
-
 /**
  *  Blue Iris Integration
  *
@@ -193,5 +191,5 @@ MessageDigest.getInstance("MD5").digest(s.bytes).encodeHex().toString()
 }
 
 def getVersionString(){
-  return "BlueIrisProfileIntegration - Version: H-1.0"
+  return "BlueIrisProfileIntegration - Version: H-1.66"
 }
