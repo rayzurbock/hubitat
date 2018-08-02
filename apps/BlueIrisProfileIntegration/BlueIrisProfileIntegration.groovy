@@ -33,7 +33,7 @@ definition(
  *  Date: 2016-03-04
  *
  *  Adapted for Hubiat 8/1/2018 - Brian S. Lowrance
- *  Adaptation version H-1.0
+ *  Adaptation origianl version H-1.66 8/1/2018
  *  Sets Blue Iris to a profile that corresponds to the Hubitat "mode". 
  */
 
@@ -70,14 +70,16 @@ def BISettings() {
 
 def installed() {
     log.debug getVersionString()
-    log.debug "Installed with settings: ${settings}"
+    log.debug "Installed"
+    //log.debug "Installed with settings: ${settings}"
     unsubscribe()
     subscribe(location, modeChange)
 }
 
 def updated() {
     log.debug getVersionString()
-    log.debug "Updated with settings: ${settings}"
+    log.debug "Updated"
+    //log.debug "Updated with settings: ${settings}"
     unsubscribe()
     subscribe(location, modeChange)    
 }
@@ -191,5 +193,5 @@ MessageDigest.getInstance("MD5").digest(s.bytes).encodeHex().toString()
 }
 
 def getVersionString(){
-  return "BlueIrisProfileIntegration - Version: H-1.66"
+  return "BlueIrisProfileIntegration - Version: H-1.67"
 }
